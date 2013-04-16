@@ -4,17 +4,19 @@
             <div class="control-group">
                 <label class="control-label">TODO text</label>
                 <div class="controls">
-                    <input class="input-xlarge" ng-model="todo.text"/>
+                    <input class="input-xlarge" ng-model="todo"/>
                 </div>
             </div>
             <div class="control-group">
                 <div class="controls">
-                    <button class="add btn">add -></button>
+                    <button class="add btn" ng-click="add()">add -></button>
                 </div>
             </div>
         </form>
     </div>
     <div class="span6">
-        <div ng-repeat="todo in todos.all">{{todo.text}}</div>
+        <ul class="unstyled">
+            <li ng-repeat="todo in todos" class="todo">{{todo.text}}</li>
+        </ul>
     </div>
 </div>
