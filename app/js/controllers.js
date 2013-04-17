@@ -19,6 +19,6 @@ controllers.controller('TabCtrl', ['$scope', '$location', function ($scope, $loc
     };
 }]);
 
-controllers.controller('MdCtrl', [function () {
-
+controllers.controller('BindingCtrl', ['$scope', function ($scope) {
+    $scope.fromController = 'from controller';
 }]);

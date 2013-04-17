@@ -4,10 +4,10 @@
 
 var filters = angular.module('myApp.filters', []);
 
-filters.filter('interpolate', ['version', function (version) {
+filters.filter('activeTodo', function () {
     return function (todos) {
-        return _.filter(todos, function (todp) {
+        return _.filter(todos, function (todo) {
             return !todo.done;
         });
     }
-}]);
+});

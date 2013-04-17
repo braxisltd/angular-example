@@ -2,18 +2,15 @@
 
 /* jasmine specs for filters go here */
 
-describe('filter', function() {
-  beforeEach(module('myApp.filters'));
+describe('filter', function () {
+    beforeEach(module('myApp.filters'));
 
-
-  describe('interpolate', function() {
-    beforeEach(module(function($provide) {
-      $provide.value('version', 'TEST_VER');
+    it('should allow only incomplete todos', inject(function (activeTodoFilter) {
+        var todos = [
+            {text: "not done", done: false},
+            {text: "done", done: true},
+            {text: "undefined"}
+        ];
+        expect(activeTodoFilter(todos).length).toEqual(2);
     }));
-
-
-    it('should replace VERSION', inject(function(interpolateFilter) {
-      expect(interpolateFilter('before %VERSION% after')).toEqual('before TEST_VER after');
-    }));
-  });
 });

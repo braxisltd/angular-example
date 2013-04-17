@@ -33,8 +33,8 @@ describe('my app', function () {
             input('todo').enter('todo 2');
             element('.add').click();
             expect(element('.todo').count()).toEqual(2);
-            expect(element('.todo:eq(0)').text()).toEqual('todo 1');
-            expect(element('.todo:eq(1)').text()).toEqual('todo 2');
+            expect(element('.todo:eq(0) .text').text()).toEqual('todo 1');
+            expect(element('.todo:eq(1) .text').text()).toEqual('todo 2');
         });
 
     });

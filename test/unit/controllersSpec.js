@@ -16,7 +16,7 @@ describe('ToDoCtrl', function () {
         expect(scope.todos.length).toEqual(0);
     });
 
-    it('should ....', inject(function () {
+    it('should add todos', inject(function () {
         var message = 'new message';
         scope.todo = message;
         scope.add();
