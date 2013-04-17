@@ -11,8 +11,9 @@
     <div class="row">
         <div class="span12">
             <ul class="menu nav nav-tabs" ng-controller="TabCtrl">
+                <li ng-class="tabClass('binding')"><a href="#/binding">Binding</a></li>
                 <li ng-class="tabClass('todo')"><a href="#/todo">TODO</a></li>
-                <li><a href="#/view2">view2</a></li>
+                <li ng-class="tabClass('md')"><a href="#/md">Mark down</a></li>
             </ul>
             <div ng-view></div>
         </div>
@@ -22,6 +23,8 @@
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
 -->
+<script src="lib/underscore.js"></script>
+<script src="lib/showdown.js"></script>
 <script src="lib/bootstrap.js"></script>
 <script src="lib/angular/angular.js"></script>
 <script src="js/app.js"></script>

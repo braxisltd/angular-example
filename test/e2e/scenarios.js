@@ -28,29 +28,15 @@ describe('my app', function () {
         });
 
         it('should add two todos', function() {
-            input('todo.text').enter('todo 1');
+            input('todo').enter('todo 1');
             element('.add').click();
-            input('todo.text').enter('todo 2');
+            input('todo').enter('todo 2');
             element('.add').click();
             expect(element('.todo').count()).toEqual(2);
             expect(element('.todo:eq(0)').text()).toEqual('todo 1');
-            expect(element('.todo:eq(0)').text()).toEqual('todo 2');
+            expect(element('.todo:eq(1)').text()).toEqual('todo 2');
         });
 
     });
 
-//
-//    describe('view2', function () {
-//
-//        beforeEach(function () {
-//            browser().navigateTo('#/view2');
-//        });
-//
-//
-//        it('should render view2 when user navigates to /view2', function () {
-//            expect(element('[ng-view] p:first').text()).
-//                    toMatch(/partial for view 2/);
-//        });
-//
-//    });
 });

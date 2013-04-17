@@ -5,7 +5,11 @@
 var controllers = angular.module('myApp.controllers', []);
 
 controllers.controller('ToDoCtrl', ['$scope', function ($scope) {
-
+    $scope.todos = [];
+    $scope.add = function () {
+        $scope.todos.push({text:$scope.todo});
+        $scope.todo = '';
+    };
 }]);
 
 controllers.controller('TabCtrl', ['$scope', '$location', function ($scope, $location) {
@@ -15,6 +19,6 @@ controllers.controller('TabCtrl', ['$scope', '$location', function ($scope, $loc
     };
 }]);
 
-controllers.controller('MyCtrl2', [function () {
+controllers.controller('MdCtrl', [function () {
 
 }]);

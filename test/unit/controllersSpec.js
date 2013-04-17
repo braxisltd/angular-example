@@ -2,15 +2,25 @@
 
 /* jasmine specs for controllers go here */
 
-describe('controllers', function(){
-  beforeEach(module('myApp.controllers'));
+describe('ToDoCtrl', function () {
 
+    var scope , controller;
 
-  it('should ....', inject(function() {
-    //spec body
-  }));
+    beforeEach(module('myApp.controllers'));
+    beforeEach(inject(function ($controller, $rootScope) {
+        scope = $rootScope.$new();
+        controller = $controller('ToDoCtrl', {$scope: scope});
+    }));
 
-  it('should ....', inject(function() {
-    //spec body
-  }));
+    it('todos should initially be empty', function () {
+        expect(scope.todos.length).toEqual(0);
+    });
+
+    it('should ....', inject(function () {
+        var message = 'new message';
+        scope.todo = message;
+        scope.add();
+        expect(scope.todos[0].text).toEqual(message);
+        expect(scope.todo).toEqual('');
+    }));
 });
